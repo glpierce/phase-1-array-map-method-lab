@@ -12,5 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const newArray = tutorials.map(toTitleCase)
+  return newArray
+}
+
+const toTitleCase = function(element) {
+  let newString = ``;
+  for (let i = 0; i < element.length; i++) {
+    if (i === 0 || (element.charAt(i-1) === ` ` && element.charAt(i).toUpperCase() !== element.charAt(i).toLowerCase())) {
+      newString+= element.charAt(i).toUpperCase();
+    } else {
+      newString+= element.charAt(i);
+    }
+  }
+  return newString;
 }
